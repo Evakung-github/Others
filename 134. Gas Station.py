@@ -4,9 +4,11 @@ Created on Wed Jan 15 21:57:15 2020
 
 @author: eva
 """
+# https://leetcode.com/problems/gas-station/
 
 class Solution:
     def canCompleteCircuit(self, gas):
+# The following is Time Limit Exceeded, as it runs repetitively.
 #         i=0
 #         while i <len(gas):
 #             res = 0
@@ -20,6 +22,8 @@ class Solution:
 #             i = j+1
 #         return -1
 
+# Record every gas station's condition, that's record how much gas is lack if starting from that gas station, 
+# so if the gas is able to cover all the lack, then we can travel around the circuit once.
         lack = 0
         gas_sum = 0
         ans = 0
