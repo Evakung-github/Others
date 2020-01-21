@@ -14,7 +14,10 @@ Created on Tue Jan 21 10:27:05 2020
 #         self.left = None
 #         self.right = None
 
+# Use recursion to build the tree.
+
 class Solution:
+
 #     def sortedArrayToBST(self, nums: List[int]) -> TreeNode:
 #         if not nums:
 #             return None
@@ -26,8 +29,7 @@ class Solution:
         
 #         return ans
     
-    
-    
+    # The following one is slightly more efficient.    
     def sortedArrayToBST(self, nums):
         if len(nums)==0:
             return None
