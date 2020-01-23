@@ -6,6 +6,8 @@ Created on Wed Jan 22 18:20:54 2020
 """
 
 class Solution:
+# DFS method. 
+     
      def numIslands(self, grid: List[List[str]]) -> int:
          if not grid or len(grid) == 0:
              return 0
@@ -19,6 +21,7 @@ class Solution:
  def dfs(grid, i, j):
      if i < 0 or i >= len(grid) or j < 0 or j >= len(grid[i]) or grid[i][j] == '0':
          return 0
+# Turn the visited nodes into "0", then it won't be calculated twice. keep turning the adjacent node into "0".
      grid[i][j] = '0'
      dfs(grid, i - 1, j)
      dfs(grid, i + 1, j)
