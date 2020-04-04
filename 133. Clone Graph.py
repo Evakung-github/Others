@@ -5,6 +5,10 @@ class Node:
         self.val = val
         self.neighbors = neighbors
 """
+# I created a hash table to track whether the node has been created or not and also map it to the created node for future use.
+# This could avoid infinite loop. The node created before will be returned immediately when being called.
+
+
 class Solution:
     def cloneGraph(self, node: 'Node') -> 'Node':
         
