@@ -12,8 +12,38 @@ class Solution:
     def connect(self, root: 'Node') -> 'Node':
         if not root:
             return root
+'''
+First solution: Using bfs.
+Track every point level by level. Once the stack is empty, then we know the node is the last node of the level and its next is null 
+as well as that it is time to go the next level.
+However, the followup question says using constant extra space. Though we can assume the implicit stack does not count as the extra space,
+it is fun/worthy to think up another solution for the problem.
+'''
+
+#         stack = [root]
+#         next_ = []
+#         while stack:
+#             cur = stack.pop(0)
+#             if cur.left:
+#                 next_.append(cur.left)
+#             if cur.right:
+#                 next_.append(cur.right)
+            
+#             if stack:
+#                 cur.next = stack[0]
+#             else:
+#                 stack = next_
+#                 next_ = []
         
-        
+#         return root        
+
+'''
+Second solution: Using three pointers.
+Three pointers are used to track current level and next level's leftmost node and moving node.
+The current level is shifted by the next pointer, when the next is null, it means it's time to move to the next level, 
+start from the leftmost node we recorded before. 
+'''
+
         cur = root
         childhead,child = None,None
         
@@ -40,19 +70,4 @@ class Solution:
         
         
         
-#         stack = [root]
-#         next_ = []
-#         while stack:
-#             cur = stack.pop(0)
-#             if cur.left:
-#                 next_.append(cur.left)
-#             if cur.right:
-#                 next_.append(cur.right)
-            
-#             if stack:
-#                 cur.next = stack[0]
-#             else:
-#                 stack = next_
-#                 next_ = []
-        
-#         return root
+
