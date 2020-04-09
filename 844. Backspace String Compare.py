@@ -1,3 +1,16 @@
+'''
+The intuition methode is to find the final text result by popping the stack once seeing "#".
+However it takes O(N) time and O(N) space.
+
+Followup:
+O(N) time and O(1) space.
+ 
+We can't decide the final result of each string if doing from left to left,
+however we can if doing backwardly.
+The only issue is that we can't make sure if the next char should be skipped or be kept (if it is "#").
+Therefore, new variable, back, is introduced to track how many "#" we have met so far, and if we can skip the next char.
+'''
+
 class Solution:
     def backspaceCompare(self, S: str, T: str) -> bool:
         s = len(S)-1
