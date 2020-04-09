@@ -4,6 +4,23 @@
 #         self.val = x
 #         self.next = None
 
+'''
+At first, I tried to solve the problem by create the list, remove the zero sum subset and turn it back to link list.
+I couldn't think up a good way to find the zero sum subset, so basically the first method is trying to sum up all the subset 
+and then remove it.
+
+Then actually there is easier way to find the subset we want, which is adding from the beginning of the link list, 
+and when the sum matches the previous sum, it means the sum of the subset between them is zero!!! 
+
+In addition, it is well noticed that the last one should be kept instead of the first one, 
+take [1,3,2,-3,-2,5,5,-5,1] for example. If the sum series is [1,4,6,3,1,6,11,6,7,6]
+when the second "1" is found, the link list is now 1 --> 5 --> 5 --> -5 --> 1.
+The error occurs when the following 6s matching the previous 6, but 6 is no longer valid in the sum series.
+Hence, we should kind of solving this problem backwardly.
+'''
+
+
+
 class Solution:
     def removeZeroSumSublists(self, head: ListNode) -> ListNode:
         
