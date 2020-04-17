@@ -15,7 +15,10 @@ class Solution:
          for i in range(len(grid)):
              for j in range(len(grid[i])):
                  if grid[i][j] == '1':
-                     total += dfs(grid, i, j)
+                     # the return answer is 1, so we can just write total += 1.
+                     total += 1
+                         
+                     #total += dfs(grid, i, j)
          return total
 
  def dfs(grid, i, j):
@@ -27,7 +30,7 @@ class Solution:
      dfs(grid, i + 1, j)
      dfs(grid, i, j - 1)
      dfs(grid, i, j + 1)
-     return 1
+     
 #    def numIslands(self, grid):
 #        if not grid:
 #            return 0
