@@ -5,29 +5,33 @@ class Node:
         self.val = val
         self.children = children
 """
-
+'''
+Recursion
+'''
 class Solution:
     def __init__(self):
         self.ans = []
     def preorder(self, root: 'Node') -> List[int]:
-        # if not root:
-        #     return
-        # self.ans.append(root.val)
-        # for c in root.children:
-        #     self.preorder(c)
-        # return self.ans
+        if not root:
+            return
+        self.ans.append(root.val)
+        for c in root.children:
+            self.preorder(c)
+        return self.ans
+
+'''
+Iteration
+'''
+    def preorder(self, root: 'Node') -> List[int]:
         if not root:
             return
   
-        ans = [root.val]
+        ans = []
         stack = [root]
      
         while stack:
-            if stack[-1].children == []:
-                stack.pop()
-            else:
-                r = stack[-1].children.pop(0)
-                stack.append(r)
-                ans.append(r.val)
+            r = stack.pop()
+            ans.append(r.val)
+            stack.extend(r.children[::-1])
         
         return ans
