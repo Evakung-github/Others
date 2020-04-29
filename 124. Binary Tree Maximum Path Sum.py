@@ -1,3 +1,16 @@
+'''
+   8
+  / \
+ 4   5
+
+In this subtree, at node which value is 8, its maximum sum value is 8+4+5=17. However, this value could not be further added by its parent node.
+Thus, the maximum value that can be transitted to the parent node should also be computed. For this example, the value is 8+5=13.
+The variable global_max and local_max are created for the purpose.
+(we can also use self.max to solve the problem)
+'''
+
+
+
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, x):
