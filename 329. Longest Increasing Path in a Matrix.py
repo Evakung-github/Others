@@ -1,3 +1,9 @@
+'''
+I applied dfs and dp to solve this problem.
+Each cell is traversed only once, so the time complexity is: O(m*n).
+space complexity: O(m*n)
+'''
+
 class Solution:
     def longestIncreasingPath(self, matrix):
         
