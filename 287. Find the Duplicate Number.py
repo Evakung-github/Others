@@ -1,3 +1,8 @@
+'''
+O(1) space
+Use two pointers, fast and slow pointers, to detect the cycles.
+'''
+
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
         
