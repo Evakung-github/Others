@@ -1,3 +1,15 @@
+'''
+A hashmap and an array are created. Hashmap tracks the position of value in the array, and we can also use array to track the appearance in the hashmap.
+The main trick is to swap the last element and the element need to be removed, and then we can delete the last element at O(1) cost.
+Afterwards, we need to update the position of the original last element in the hashmap to its current position.
+Therefore, that's why we need to record its space in the value of the hashmap.
+ref: https://www.youtube.com/watch?v=mRTgft9sBhA
+'''
+
+
+
+
+
 import random
 class RandomizedCollection:
 
