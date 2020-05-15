@@ -1,3 +1,13 @@
+'''
+The problem is similar to problem 53. Maximum Subarray but with the circulation.
+The maximum sum of subarray happens in two place, one is in the middle of array, another is back+front.
+For the first one, the solution to problem 53 can be used directly.
+For the second one, the miniumn sum of subarray is calculated and substracted from the sum of total list.
+'''
+
+
+
+
 class Solution:
     def maxSubarraySumCircular(self, A):
         max_ = -float('inf')
